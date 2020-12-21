@@ -7,11 +7,20 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Runtime.InteropServices;
 
 namespace FormExamples
 {
     public partial class Form1 : Form
     {
+        public const int WM_NCLBUTTONDOWN = 0xA1;
+        public const int HT_CAPTION = 0x2;
+
+        [DllImportAttribute("user32.dll")]
+        public static extern int SendMessage(IntPtr hWnd, int Msg, int wParam, int lParam);
+        [DllImportAttribute("user32.dll")]
+        public static extern bool ReleaseCapture();
+
         public Form1()
         {
             InitializeComponent();
@@ -41,10 +50,12 @@ namespace FormExamples
             if (this.WindowState == FormWindowState.Maximized)
             {
                 this.WindowState = FormWindowState.Normal;
+                this.pnMaximasize.BackgroundImage = global::FormExamples.Properties.Resources.Website_Maximize_512;
             }
             else
             {
                 this.WindowState = FormWindowState.Maximized;
+                this.pnMaximasize.BackgroundImage = global::FormExamples.Properties.Resources.restore_512;
             }
         }
 
@@ -57,7 +68,8 @@ namespace FormExamples
         {
             if (e.Button == MouseButtons.Left)
             {
-                this.Location = new Point(Cursor.Position.X + e.X, Cursor.Position.Y + e.Y);
+                ReleaseCapture();
+                SendMessage(Handle, WM_NCLBUTTONDOWN, HT_CAPTION, 0);
             }
         }
     }

@@ -60,9 +60,9 @@ namespace FormExamples
             this.lbTitulo.Cursor = System.Windows.Forms.Cursors.SizeAll;
             this.lbTitulo.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbTitulo.ForeColor = System.Drawing.Color.White;
-            this.lbTitulo.Location = new System.Drawing.Point(71, 8);
+            this.lbTitulo.Location = new System.Drawing.Point(134, 8);
             this.lbTitulo.Name = "lbTitulo";
-            this.lbTitulo.Size = new System.Drawing.Size(547, 23);
+            this.lbTitulo.Size = new System.Drawing.Size(484, 23);
             this.lbTitulo.TabIndex = 3;
             this.lbTitulo.Text = "Titulo predefinido";
             this.lbTitulo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;

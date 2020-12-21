@@ -89,5 +89,8 @@
   <ItemGroup>
     <None Include="Resources\minimize-b837e9c641dea4c3b5c662586d475f6c.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\restore-512.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
